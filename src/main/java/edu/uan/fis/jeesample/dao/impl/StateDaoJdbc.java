@@ -23,7 +23,7 @@ public class StateDaoJdbc implements StateDao {
         //
         IConnectionFactory connectionFactory = new JdbcConnectionFactory();
         try (Connection conn = connectionFactory.createConnection()) {
-            try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO states VALUES(?,?)")) {
+            try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO state VALUES(?,?)")) {
                 stmt.setInt(1, state.getStateId());
                 stmt.setString(2, state.getName());
                 stmt.executeUpdate();
@@ -42,7 +42,7 @@ public class StateDaoJdbc implements StateDao {
         //
         IConnectionFactory connectionFactory = new JdbcConnectionFactory();
         try (Connection conn = connectionFactory.createConnection()) {
-            try (PreparedStatement stmt = conn.prepareStatement("UPDATE states set NAME = ? where stateId = ?")) {
+            try (PreparedStatement stmt = conn.prepareStatement("UPDATE state set NAME = ? where stateId = ?")) {
                 stmt.setString(1, state.getName());
                 stmt.setInt(2, state.getStateId());
                 stmt.executeUpdate();
@@ -59,7 +59,7 @@ public class StateDaoJdbc implements StateDao {
         //
         IConnectionFactory connectionFactory = new JdbcConnectionFactory();
         try (Connection conn = connectionFactory.createConnection()) {
-            try (PreparedStatement stmt = conn.prepareStatement("DELETE FROM states where stateId = ?")) {
+            try (PreparedStatement stmt = conn.prepareStatement("DELETE FROM state where stateId = ?")) {
                 stmt.setInt(1, state.getStateId());
                 stmt.executeUpdate();
             }
@@ -74,7 +74,7 @@ public class StateDaoJdbc implements StateDao {
         // Se solicitó implementación de fabrica
         IConnectionFactory connectionFactory = new JdbcConnectionFactory();
         try (Connection conn = connectionFactory.createConnection()) {
-            try (PreparedStatement stmt = conn.prepareStatement("SELECT STATEID, NAME FROM states where STATEID = ?")) {
+            try (PreparedStatement stmt = conn.prepareStatement("SELECT STATEID, NAME FROM state where STATEID = ?")) {
                 stmt.setInt(1, stateId);
                 ResultSet rs = stmt.executeQuery();
                 if (rs.next()) {
@@ -96,7 +96,7 @@ public class StateDaoJdbc implements StateDao {
         //
         IConnectionFactory connectionFactory = new JdbcConnectionFactory();
         try (Connection conn = connectionFactory.createConnection()) {
-            try (PreparedStatement stmt = conn.prepareStatement("SELECT STATEID, NAME FROM states")) {
+            try (PreparedStatement stmt = conn.prepareStatement("SELECT STATEID, NAME FROM state")) {
                 ResultSet rs = stmt.executeQuery();
                 while(rs.next()){
                     State state = new State();
