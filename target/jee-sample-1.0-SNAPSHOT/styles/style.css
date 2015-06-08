@@ -1,0 +1,108 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 5/06/2015, 12:04:25 PM
+    Author     : Administrator
+*/
+body{
+  margin: 0;
+  padding: 0;
+  background: url(http://www.uan.edu.co/templates/business13/images/bg.png) !important;
+  min-width: 800px;
+  font-family: verdana;
+}
+
+h1{
+    border-bottom: 1px solid #102065;    
+}
+
+div.header{
+    height: 200px;
+    font-size: 1.0em;
+    color: white;
+    background-color: #102065;
+}
+div.header img{
+    height: 160px;
+    padding: 10px;
+    float: left;
+}
+div.header-text{
+    text-align: right;
+    margin:10px;
+}
+div.menu{
+    background-color: #102065;
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    width: 15%;
+    margin: 5%;
+    float: left;
+}
+div.menu ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+div.menu ul li{
+  margin: 10px 25px;
+}
+div.menu ul a{
+    color: white;
+    text-decoration:none;
+}
+div.body-page{
+  font-size: 1.2em;
+  background-color: white;
+  border: 1px solid #102065;
+  width: 65%;
+  float: left;
+  margin: 3% 1%;
+  padding-bottom: 70px;
+  padding: 20px;
+
+}
+div.body-page table{
+  width: 100%;
+}
+div.body-page table th{
+    color: white;
+    background-color: #102065;
+}
+div.toolbar{
+    width: 100%;
+    margin: 10px;
+    float:left;
+    width:90%;
+}
+
+div.toolbar a{
+  padding: 10px;
+}
+div.toolbar input{
+  font-size: 1.2em;
+}
+div.form{
+    width: 90%;
+    margin: 3%;
+    display: table;
+}
+div.form div.form-item{
+    padding:5px;
+    float:left;
+    width:48%;
+}
+div.form .form-label{
+    width: 90%;
+}
+div.form .form-input{
+    width: 90%;
+}
+div.form .form-input input{
+    width: 100%;
+    font-size: 1em;
+}
