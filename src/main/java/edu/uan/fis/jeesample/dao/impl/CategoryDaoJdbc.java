@@ -82,13 +82,13 @@ public class CategoryDaoJdbc implements CategoryDao {
         // Se solicitó implementación de fabrica
         IConnectionFactory connectionFactory = new JdbcConnectionFactory();
         try (Connection conn = connectionFactory.createConnection()) {
-            try (PreparedStatement stmt = conn.prepareStatement("SELECT CATEGORYID, NAME, ParentCategoryId FROM category where CATEGORYID = ?")) {
+            try (PreparedStatement stmt = conn.prepareStatement("SELECT CategoryId, Name, ParentCategoryId FROM category where CategoryId = ?")) {
                 stmt.setInt(1, categoryId);
                 ResultSet rs = stmt.executeQuery();
                 if (rs.next()) {
                     category = new Category();
-                    category.setCategoryId(rs.getInt("CATEGORYID"));
-                    category.setName(rs.getString("NAME"));
+                    category.setCategoryId(rs.getInt("CategoryId"));
+                    category.setName(rs.getString("Name"));
                     category.setCategoryId(rs.getInt("ParentCategoryId"));
                 }
             }
@@ -105,13 +105,13 @@ public class CategoryDaoJdbc implements CategoryDao {
         //
         IConnectionFactory connectionFactory = new JdbcConnectionFactory();
         try (Connection conn = connectionFactory.createConnection()) {
-            try (PreparedStatement stmt = conn.prepareStatement("SELECT CATEGORYID, NAME, ParentCategoryId FROM category")) {
+            try (PreparedStatement stmt = conn.prepareStatement("SELECT CategoryId, Name, ParentCategoryId FROM category")) {
                 ResultSet rs = stmt.executeQuery();
                 while (rs.next()) {
                     Category category = new Category();
-                    category.setCategoryId(rs.getInt("CATEGORYID"));
-                    category.setName(rs.getString("NAME"));
-                    category.setCategoryId(rs.getInt("ParentCategoryId"));
+                    category.setCategoryId(rs.getInt("CategoryId"));
+                    category.setName(rs.getString("Name"));
+                    category.setParentCategoryId(rs.getInt("ParentCategoryId"));
                     categoryList.add(category);
                 }
             }

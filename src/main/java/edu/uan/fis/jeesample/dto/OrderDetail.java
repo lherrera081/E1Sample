@@ -9,7 +9,7 @@ import java.io.Serializable;
 
 /**
  *
- * @author Administrator
+ * @author Luis Herrera
  */
 public class OrderDetail implements Serializable {
     private Integer orderDetailId;

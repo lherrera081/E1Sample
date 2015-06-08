@@ -85,9 +85,9 @@ public class CustomerDaoJdbc implements CustomerDao {
                     customer = new Customer();
                     customer.setCustomerId(rs.getInt("CustomerId"));
                     customer.setName(rs.getString("Name"));
-                    customer.setName(rs.getString("LastName"));
-                    customer.setCustomerId(rs.getInt("CityId"));
-                    customer.setCustomerId(rs.getInt("StateId"));
+                    customer.setLastName(rs.getString("LastName"));
+                    customer.setCityId(rs.getInt("CityId"));
+                    customer.setStateId(rs.getInt("StateId"));
                 }
             }
         } catch (SQLException ex) {
@@ -109,9 +109,9 @@ public class CustomerDaoJdbc implements CustomerDao {
                     Customer customer = new Customer();
                     customer.setCustomerId(rs.getInt("CustomerId"));
                     customer.setName(rs.getString("Name"));
-                    customer.setName(rs.getString("LastName"));
-                    customer.setCustomerId(rs.getInt("CityId"));
-                    customer.setCustomerId(rs.getInt("StateId"));
+                    customer.setLastName(rs.getString("LastName"));
+                    customer.setCityId(rs.getInt("CityId"));
+                    customer.setStateId(rs.getInt("StateId"));
                     customerList.add(customer);
                 }
             }

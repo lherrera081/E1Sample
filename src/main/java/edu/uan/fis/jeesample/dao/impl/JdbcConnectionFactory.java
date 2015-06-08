@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author Administrator
+ * @author Luis Herrera
  */
 public class JdbcConnectionFactory implements IConnectionFactory {
     private Connection conn = null;

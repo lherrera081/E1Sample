@@ -17,7 +17,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Administrator
+ * @author Luis Herrera
  */
 public class OrderDaoJdbcTest {
     

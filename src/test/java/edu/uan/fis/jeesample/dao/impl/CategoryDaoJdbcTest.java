@@ -11,7 +11,7 @@ import junit.framework.TestCase;
 
 /**
  *
- * @author Administrator
+ * @author Luis Herrera
  */
 public class CategoryDaoJdbcTest extends TestCase {
 
