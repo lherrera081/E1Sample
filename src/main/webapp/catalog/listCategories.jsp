@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,7 +19,6 @@
         </div>
         <div class="menu">
             <ul>
-                
                 <li>
                     <a href="${pageContext.request.contextPath}/home.do"/>Home</a>
                 </li>
@@ -27,9 +27,6 @@
                 </li>
                 <li>
                     <a href="${pageContext.request.contextPath}/listCustomers.do"/>Customers</a>
-                </li>
-                <li>
-                    <a href="${pageContext.request.contextPath}/listOrders.do"/>Orders</a>
                 </li>
                 <li>
                     <a href="${pageContext.request.contextPath}/listCategories.do"/>Categories</a>
@@ -50,11 +47,11 @@
                 </tr>
             </thead>
             <tbody>
-                <c:forEach items="${categoryList}" var="category">
+                <c:forEach items="${categoryList}" var="cat">
                     <tr>
-                        <td><c:out value="${category.name}"></c:out></td>
-                        <td><a href="${pageContext.request.contextPath}/insertCategory.do?categoryId=${category.categoryId}"/>Editar</a></td>
-                        <td><a href="${pageContext.request.contextPath}/deleteCategory.do?categoryId=${category.categoryId}"/>Eliminar</a></td>
+                        <td><c:out value="${cat.name}"></c:out></td>
+                        <td><a href="${pageContext.request.contextPath}/insertCategory.do?categoryId=${cat.categoryId}"/>Editar</a></td>
+                        <td><a href="${pageContext.request.contextPath}/deleteCategory.do?categoryId=${cat.categoryId}"/>Eliminar</a></td>
                     </tr>
                 </c:forEach>
             </tbody>

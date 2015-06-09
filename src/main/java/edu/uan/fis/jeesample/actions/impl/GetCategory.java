@@ -7,8 +7,11 @@ package edu.uan.fis.jeesample.actions.impl;
 
 import edu.uan.fis.jeesample.actions.CommandResult;
 import edu.uan.fis.jeesample.actions.ICommand;
+import edu.uan.fis.jeesample.dao.CategoryDao;
 import edu.uan.fis.jeesample.dao.CustomerDao;
+import edu.uan.fis.jeesample.dao.impl.CategoryDaoJdbc;
 import edu.uan.fis.jeesample.dao.impl.CustomerDaoJdbc;
+import edu.uan.fis.jeesample.dto.Category;
 import edu.uan.fis.jeesample.dto.Customer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -29,11 +32,9 @@ public class GetCategory implements ICommand {
             Integer categoryId = 0;
             if(request.getParameter("categoryId") != null){
                 categoryId = Integer.parseInt(request.getParameter("categoryId")); 
-                CustomerDao dao = new CustomerDaoJdbc();
-                Customer entity = dao.findById(categoryId);
-                if(entity!=null){
-                    request.setAttribute("category", entity);
-                }
+                CategoryDao dao = new CategoryDaoJdbc();
+                Category entity = dao.findById(categoryId);
+                request.setAttribute("category", entity);
             }
             result.setResult("insertCategory");
         } catch (Exception e) {

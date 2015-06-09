@@ -29,9 +29,6 @@
                     <a href="${pageContext.request.contextPath}/listCustomers.do"/>Customers</a>
                 </li>
                 <li>
-                    <a href="${pageContext.request.contextPath}/listOrders.do"/>Orders</a>
-                </li>
-                <li>
                     <a href="${pageContext.request.contextPath}/listCategories.do"/>Categories</a>
                 </li>
             </ul>

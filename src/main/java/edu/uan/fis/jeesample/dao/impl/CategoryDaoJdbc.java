@@ -89,7 +89,7 @@ public class CategoryDaoJdbc implements CategoryDao {
                     category = new Category();
                     category.setCategoryId(rs.getInt("CategoryId"));
                     category.setName(rs.getString("Name"));
-                    category.setCategoryId(rs.getInt("ParentCategoryId"));
+                    category.setParentCategoryId(rs.getInt("ParentCategoryId"));
                 }
             }
         } catch (SQLException ex) {
